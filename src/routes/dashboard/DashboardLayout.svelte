@@ -3,6 +3,7 @@
 	import gridHelp from 'svelte-grid/build/helper/index.mjs';
 	import { MapLibre } from 'svelte-maplibre';
 	import ChartJsComponent from '../components/ChartJSComponent.svelte';
+	import DeckGl from '../components/DeckGL.svelte';
 	const { item } = gridHelp;
 	const id = () => '_' + Math.random().toString(36).substr(2, 9);
 
@@ -31,19 +32,31 @@
 			1: item({ x: 0, y: 2, w: 1, h: 2 }),
 			data: 'chart'
 		},
-
+		{
+			id: id(),
+			5: item({
+				x: 0,
+				y: 6,
+				w: 5,
+				h: 5,
+				customDragger: true
+			}),
+			3: item({ x: 0, w: 3, h: 2, y: 2 }),
+			1: item({ x: 0, y: 4, w: 1, h: 2 }),
+			data: 'map'
+		},
 		{
 			id: id(),
 			5: item({
 				x: 0,
 				y: 2,
 				w: 5,
-				h: 6,
+				h: 4,
 				customDragger: true
 			}),
 			3: item({ x: 0, w: 3, h: 2, y: 2 }),
 			1: item({ x: 0, y: 4, w: 1, h: 2 }),
-			data: 'map'
+			data: 'deckgl'
 		}
 	];
 
@@ -71,6 +84,9 @@
 				{/if}
 			{:else if dataItem.data === 'chart'}
 				<ChartJsComponent></ChartJsComponent>
+			{:else if dataItem.data === 'deckgl'}
+				<DeckGl></DeckGl>
+				<div class="dragger" on:pointerdown={movePointerDown}>✋ Drag me!</div>
 			{:else}
 				{dataItem.data}
 			{/if}

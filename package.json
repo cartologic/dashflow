@@ -40,6 +40,7 @@
 		"@xyflow/svelte": "^0.0.28",
 		"autoprefixer": "^10.4.16",
 		"chart.js": "^4.4.0",
+		"deck.gl": "^8.9.32",
 		"echarts": "^5.4.3",
 		"echarts-for-svelte": "^0.1.11",
 		"postcss": "^8.4.31",
