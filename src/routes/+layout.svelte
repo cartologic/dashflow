@@ -82,7 +82,7 @@
 				</a>
 			</div>
 		</nav>
-		<main class="px-8 py-2 text-gray-700 bg-gray-200 h-screen w-screen">
+		<main class=" text-gray-700 bg-gray-200 h-screen w-screen">
 			<slot />
 		</main>
 	</div>

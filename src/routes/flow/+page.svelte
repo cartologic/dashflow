@@ -1,21 +1,26 @@
-<svelte:head>
-	<title>Flow</title>
-	<meta name="description" content="Flow this app" />
-</svelte:head>
+<script lang="ts">
+	import { writable } from 'svelte/store';
+	import { SvelteFlow, Controls, MiniMap, type Node, type Edge } from '@xyflow/svelte';
 
-<div class="text-column">
-	<h1>Flow this app</h1>
+	import '@xyflow/svelte/dist/style.css';
+	import MaplibreNode from './MaplibreNode.svelte';
+	import SliderNode from './SliderNode.svelte';
 
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
+	import { initialNodes, initialEdges } from './nodes-and-edges';
 
-	<pre>npm create svelte@latest</pre>
+	const nodes = writable<Node[]>(initialNodes);
+	const edges = writable<Edge[]>(initialEdges);
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
+	const nodeTypes = {
+		custom: MaplibreNode,
+		sliderzoomnode: SliderNode
+	};
+	const proOptions = { hideAttribution: true };
+</script>
+
+<div style="height:100vh;">
+	<SvelteFlow {nodes} {nodeTypes} {edges} {proOptions} fitView class="bg-teal-50">
+		<MiniMap />
+		<Controls />
+	</SvelteFlow>
 </div>
