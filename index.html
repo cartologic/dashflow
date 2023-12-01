@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="modulepreload" href="./_app/immutable/entry/start.Q3l7yYbp.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.FzHS2FI6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.mxG3_bx7.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.kgseBrzj.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.X9ZNjePw.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.radoJu7X.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.LRFSOuOa.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.s-A4zFi5.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_x8qkdb = {
+						assets: "/dashflow",
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("./_app/immutable/entry/start.Q3l7yYbp.js"),
+						import("./_app/immutable/entry/app.radoJu7X.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
