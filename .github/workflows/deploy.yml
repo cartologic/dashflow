@@ -24,13 +24,13 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
-          npm run build
+          yarn build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v2
