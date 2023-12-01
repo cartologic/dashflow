@@ -12,7 +12,7 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"deploy": "pnpm build && pnpx gh-pages -d build -t true"
+		"deploy": "gh-pages -d build -t true"
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",

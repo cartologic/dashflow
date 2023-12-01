@@ -2,6 +2,7 @@
 	import Header from './Header.svelte';
 	import logo from '$lib/images/svelte-logo.svg';
 	import './styles.css';
+	import { base } from '$app/paths';
 </script>
 
 <div class="app">
@@ -11,13 +12,13 @@
 		<!-- Sidebar -->
 		<nav class="bg-gray-900 w-20 justify-between flex flex-col">
 			<div class="mt-10 mb-10">
-				<a href="/">
+				<a href="{base}/">
 					<img src={logo} class="rounded-full w-10 h-10 mb-3 mx-auto" />
 				</a>
 				<div class="mt-10">
 					<ul>
 						<li class="mb-6">
-							<a href="/flow">
+							<a href="{base}/flow">
 								<span>
 									<svg
 										class="fill-current h-5 w-5 text-gray-300 mx-auto hover:text-green-500"
@@ -33,7 +34,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/dashboard">
+							<a href="{base}/dashboard">
 								<span>
 									<svg
 										class="fill-current h-5 w-5 text-gray-300 mx-auto hover:text-green-500"
